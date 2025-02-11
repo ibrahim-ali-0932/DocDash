@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocDash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/landingpage.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #CCCCFF;
+        }
+
+        .nav-bar {
+            width: 100%;
+            height: 60px;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border: 2px solid white;
+        }
+        .nav-bar img {
+            height: 40px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+        }
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-right: 30px;
+        }
+        .auth-buttons button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-section video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .tagline {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 40px;
+        }
+        .getstarted, .getstarted2 {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: large;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .getstarted2 {
+            margin-left: 250px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background-color: #A3A3CC;
+            margin: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .container img {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .container .description {
+            width: 50%;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+        }
+        .footer {
+            background-color: #5C5C99;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .footer .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .footer .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer .contact-info {
+            text-align: left;
+        }
+        .footer .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .footer .logo img {
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <img src="/images-videos/Docdash Logo.png" alt="DocDash Logo">
+        <h1>DocDash</h1>
+        <div class="nav-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Services</a>
+        </div>
+        <div class="auth-buttons">
+            <button>Sign In</button>
+            <button>Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <video autoplay loop muted>
+            <source src="images-videos/main-video.mp4" type="video/mp4">
+        </video>
+        <div class="tagline">
+            <h1>Medical Appointments <br> Reimagined.</h1>
+            <button class="getstarted">Get Started →</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="about-heading">About Us</h2>
+        <img src="/images-videos/about-us.jpg" alt="About Us">
+        <div class="description">
+            <p>We provide seamless medical appointments with top doctors across the region.</p>
+        </div>
+    </div>
+
+    <div class="container" style="flex-direction: row-reverse;">
+        <h2 class="team-heading">Our Team</h2>
+        <img src="/images-videos/our-team.jpg" alt="Our Team">
+        <div class="description">
+            <p>All our doctors are verified professionals with years of experience.</p>
+            <button class="getstarted">Join Us →</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="about-heading">Book <br>Appointment</h2>
+        <img src="/images-videos/book-appointment.jpg" alt="Book Appointment">
+        <div class="description">
+            <p>Schedule an appointment with our expert doctors at your convenience.</p>
+            <button class="getstarted2">Book→</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <p>Email: contact@docdash.com</p>
+            <p>Location: 123 Health Street, City, Country</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="logo">
+            <img src="/images-videos/Docdash Logo.png" alt="DocDash Logo">
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
