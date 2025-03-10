@@ -2,209 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DocDash</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/landingpage.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #CCCCFF;
-        }
-
-        .nav-bar {
-            width: 100%;
-            height: 60px;
-            background: transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            color: white;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border: 2px solid white;
-        }
-        .nav-bar img {
-            height: 40px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            margin: 0 15px;
-        }
-        .auth-buttons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-right: 30px;
-        }
-        .auth-buttons button {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .hero-section video {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-        }
-        .tagline {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            font-size: 40px;
-        }
-        .getstarted, .getstarted2 {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            font-size: large;
-            border-radius: 50px;
-            cursor: pointer;
-        }
-        .getstarted2 {
-            margin-left: 250px;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            padding: 40px;
-            background-color: #A3A3CC;
-            margin: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .container img {
-            width: 50%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .container .description {
-            width: 50%;
-            padding: 20px;
-            color: white;
-            font-size: 18px;
-        }
-        .footer {
-            background-color: #5C5C99;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-        .footer .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        .footer .social-icons a {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-        }
-        .footer .contact-info {
-            text-align: left;
-        }
-        .footer .logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .footer .logo img {
-            height: 60px;
-        }
+        body { background-color: #4C3BCF; font-family: 'Montserrat', sans-serif; }
+        .hero-section video { width: 100%; height: 100vh; object-fit: cover; }
+        .containerbg{ background-color: #4B70F5; }
+        .header-footer{ background-color: #3DC2EC; }
     </style>
 </head>
 <body>
-    <nav class="nav-bar">
-        <img src="/images-videos/Docdash Logo.png" alt="DocDash Logo">
-        <h1>DocDash</h1>
-        <div class="nav-links">
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Services</a>
-        </div>
-        <div class="auth-buttons">
-            <button>Sign In</button>
-            <button>Sign Up</button>
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-white fixed-top header-footer">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/images-videos/Docdash Logo.png" height="40" alt="DocDash Logo"> DocDash</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+                </ul>
+                <div class="d-flex gap-4">
+                    <button class="btn btn-outline-light">Sign In</button>
+                    <button class="btn btn-outline-light">Sign Up</button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="hero-section">
-        <video autoplay loop muted>
-            <source src="images-videos/main-video.mp4" type="video/mp4">
-        </video>
-        <div class="tagline">
+    <div class="hero-section position-relative">
+        <video autoplay loop muted><source src="images-videos/main-video.mp4" type="video/mp4"></video>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
             <h1>Medical Appointments <br> Reimagined.</h1>
-            <button class="getstarted">Get Started →</button>
+            <button class="btn btn-outline-light mt-3">Get Started →</button>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="about-heading">About Us</h2>
-        <img src="/images-videos/about-us.jpg" alt="About Us">
-        <div class="description">
-            <p>We provide seamless medical appointments with top doctors across the region.</p>
+    <div class="container my-1">
+        <div class="row text-white p-3 rounded containerbg">
+            <div class="col-md-6"><img src="/images-videos/about-us.jpg" class="img-fluid rounded"></div>
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <p>We provide seamless medical appointments with top doctors across the region.</p>
+                <button class="btn btn-outline-light mt-4">Learn More→</button>
+            </div>
         </div>
     </div>
 
-    <div class="container" style="flex-direction: row-reverse;">
-        <h2 class="team-heading">Our Team</h2>
-        <img src="/images-videos/our-team.jpg" alt="Our Team">
-        <div class="description">
-            <p>All our doctors are verified professionals with years of experience.</p>
-            <button class="getstarted">Join Us →</button>
+    <div class="container my-1">
+        <div class="row containerbg text-white p-3 rounded flex-row-reverse">
+            <div class="col-md-6"><img src="/images-videos/our-team.jpg" class="img-fluid rounded"></div>
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <p>All our doctors are verified professionals with years of experience.</p>
+                <button class="btn btn-outline-light">Join Us →</button>
+            </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="about-heading">Book <br>Appointment</h2>
-        <img src="/images-videos/book-appointment.jpg" alt="Book Appointment">
-        <div class="description">
-            <p>Schedule an appointment with our expert doctors at your convenience.</p>
-            <button class="getstarted2">Book→</button>
+    <div class="container my-1">
+        <div class="row containerbg text-white p-3 rounded">
+            <div class="col-md-6"><img src="/images-videos/book-appointment.jpg" class="img-fluid rounded"></div>
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <p>Schedule an appointment with our expert doctors at your convenience.</p>
+                <button class="btn btn-outline-light">Book→</button>
+            </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="contact-info">
-            <p>Email: contact@docdash.com</p>
-            <p>Location: 123 Health Street, City, Country</p>
-            <p>Phone: +123 456 7890</p>
-        </div>
-        <div class="logo">
-            <img src="/images-videos/Docdash Logo.png" alt="DocDash Logo">
-        </div>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer class=" text-white py-4 header-footer" >
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div>
+                <h2>DocDash</h2>
+                <p>Email: contact@docdash.com</p>
+                <p>Location: lonna wala</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div><img src="/images-videos/Docdash Logo.png" height="200" left="5px"></div>
+            <div class="m-5" >
+                <p>Follow Us:</p>
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
