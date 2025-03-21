@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DocDash</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landingpage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -13,30 +13,76 @@
         .hero-section video { width: 100%; height: 100vh; object-fit: cover; }
         .containerbg{ background-color: #4B70F5; }
         .header-footer{ background-color: #3DC2EC; }
+        
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-white fixed-top header-footer">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/images-videos/Docdash Logo.png" height="40" alt="DocDash Logo"> DocDash</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
-                </ul>
-                <div class="d-flex gap-4">
-                    <button class="btn btn-outline-light">Sign In</button>
-                    <button class="btn btn-outline-light">Sign Up</button>
+    <div class="overlay myfont" id="overlay">
+        <div class="signInModal" id="signInModal">
+            <div class="logo-brand">
+              <button class="logo-brand-btn" href="index.html">
+                <img src="/images-videos/Dash.svg" alt="">
+              </button>
+            </div>
+            <div class="get-started">
+              <h6 class="get-started-heading"> Get started absolutely free</h6>
+              <p class="get-started-para"> Already have an account?<a class="text2" herf="#">Get Started</a></p>
+            </div>
+            <div class="form-box d-flex flex-column justify-content-center gap-5">
+              <form class="d-flex flex-column justify-content-center gap-4">
+                <div class="row first-last-name">
+                  <div class="col firstname">
+                    <input class="firstname-input"type="text" class="form-control" name="fname">
+                    <span class="name-label"><label for="fname">First Name</label></span>
+                  </div>
+                  <div class="col lastname">
+                    <input type="text" class="form-control" name="lname">
+                    <span class="name-label"><label for="lanme">Last name</label></span>
+                  </div>
                 </div>
+                <div class="row email-div">
+                  <input type="text" class="form-control" name="email">
+                  <span class="email-label"><label for="email">Email</label></span>
+                </div>
+                <div class="row email-div">
+                  <input type="password" class="form-control"  name="pswd">
+                  <span class="email-label"><label for="email">Password</label></span>
+                </div>
+              </form>
+              <button class="btn btn-outline-dark myfont" id="submit-btn">Submit</button>
             </div>
         </div>
-    </nav>
+      </div>
+     <nav class="navbar navbar-expand-lg fixed-top navigationbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html"><img src="/images-videos/Dash.svg" alt="DocDashLogo" height="70"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar" style="border: 1px solid #EF5350;">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="toggle-links-signIn-signUp-acount d-flex justify-content-between">
+                    <div class="collapse navbar-collapse toggle-links" id="navBar"> 
+                        <ul class="navbar-nav ms-auto nav-button ">
+                            <li class="nav-item"><a class="nav-link text1 myfont" href="#">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link text2 myfont" href="#">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link text1 myfont" href="#">Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="d-flex  justify-content-between signIn-signUp-acount ">
+                        <div class="signIn-signUp">
+                            <button class="btn btn-outline-dark" id="signUpbtn">Sign Up</button>
+                            <button class="btn btn-outline-dark" id="signInbtn">Sign In</button>
+                        </div>
+                        <div class="account-logo">
+                            <button class="account-logo-btn">
+                            <img src="/images-videos/docDashLogo.svg" alt="" height="40px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </nav>
 
-    <div class="hero-section position-relative">
+    <div class="hero-section position-relative "style="z-index: 0 !important;">
         <video autoplay loop muted><source src="images-videos/main-video.mp4" type="video/mp4"></video>
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
             <h1>Medical Appointments <br> Reimagined.</h1>
@@ -74,7 +120,7 @@
         </div>
     </div>
 
-    <footer class=" text-white py-4 header-footer" >
+    <footer class=" text-white py-4  " >
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
             <div>
                 <h2>DocDash</h2>
@@ -82,7 +128,7 @@
                 <p>Location: lonna wala</p>
                 <p>Phone: +123 456 7890</p>
             </div>
-            <div><img src="/images-videos/Docdash Logo.png" height="200" left="5px"></div>
+            <div><img src="/images-videos/Dash(mono).png" height="400" left="5px"></div>
             <div class="m-5" >
                 <p>Follow Us:</p>
                 <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
@@ -92,6 +138,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+   </script>
+   <script src="landingpage.js"></script>
 </body>
 </html>
