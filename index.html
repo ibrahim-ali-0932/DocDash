@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="landingpage.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public-Sans">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Text">
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;300;400;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;300;400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     html, body {
@@ -30,39 +30,9 @@
 </head>
 <body>
   <div class="overlay myfont" id="overlay">
-    <div class="signInModal" id="signInModal">
-        <div class="logo-brand">
-          <button class="logo-brand-btn" href="index.html">
-            <img src="/images-videos/Dash.svg" alt="">
-          </button>
-        </div>
-        <div class="get-started">
-          <h6 class="get-started-heading"> Get started absolutely free</h6>
-          <p class="get-started-para"> Already have an account?<a class="text2" herf="#">Get Started</a></p>
-        </div>
-        <div class="form-box d-flex flex-column justify-content-center gap-5">
-          <form class="d-flex flex-column justify-content-center gap-4">
-            <div class="row first-last-name">
-              <div class="col firstname">
-                <input class="firstname-input"type="text" class="form-control" name="fname">
-                <span class="name-label"><label for="fname">First Name</label></span>
-              </div>
-              <div class="col lastname">
-                <input type="text" class="form-control" name="lname">
-                <span class="name-label"><label for="lanme">Last name</label></span>
-              </div>
-            </div>
-            <div class="row email-div">
-              <input type="text" class="form-control" name="email">
-              <span class="email-label"><label for="email">Email</label></span>
-            </div>
-            <div class="row email-div">
-              <input type="password" class="form-control"  name="pswd">
-              <span class="email-label"><label for="email">Password</label></span>
-            </div>
-          </form>
-          <button class="btn btn-outline-dark myfont" id="submit-btn">Submit</button>
-        </div>
+    <div class="signIn-Up-modal" id="signIn-Up-modal">
+      <div id="signIn-Up-modal-content">
+      </div>
     </div>
   </div>
         <nav class="navbar navbar-expand-lg fixed-top navigationbar">
@@ -94,6 +64,58 @@
                 </div>
         </nav>
 
+        <section class="hero-section">
+          <div class="hero-content myfont">
+            <img src="/images-videos/Dash(mono).png" alt="" height="300px">
+            <p>Medical Appointments Reimagined</p>
+            <button class="btn" id="red-btn">Get Started →</button>
+          </div>
+        </section>
+        <div class="container my-1">
+          <div class="row text1 p-3 rounded containerbg">
+              <div class="col-md-6"><img src="/images-videos/about-us.jpg" class="img-fluid rounded"></div>
+              <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                  <p>We provide seamless medical appointments with top doctors across the region.</p>
+                  <button class="btn mt-4" id="red-btn">Learn More→</button>
+              </div>
+          </div>
+      </div>
+      <div class="container my-1">
+          <div class="row containerbg text2 p-3 rounded flex-row-reverse">
+              <div class="col-md-6"><img src="/images-videos/our-team.jpg" class="img-fluid rounded"></div>
+              <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                  <p>All our doctors are verified professionals with years of experience.</p>
+                  <button class="btn " id="blue-btn">Join Us →</button>
+              </div>
+          </div>
+      </div>
+  
+      <div class="container my-1">
+          <div class="row containerbg text1 p-3 rounded">
+              <div class="col-md-6"><img src="/images-videos/book-appointment.jpg" class="img-fluid rounded"></div>
+              <div class="col-md-6 d-flex flex-column align-items-center justify-content-center myfont">
+                  <p>Schedule an appointment with our expert doctors at your convenience.</p>
+                  <button class="btn "id="red-btn">Book→</button>
+              </div>
+          </div>
+      </div>
+        <footer class=" text-white py-4  " style="background-color: black ;" >
+          <div class="container d-flex flex-wrap justify-content-between align-items-center">
+              <div>
+                  <h2>DocDash</h2>
+                  <p>Email: contact@docdash.com</p>
+                  <p>Location: lonna wala</p>
+                  <p>Phone: +123 456 7890</p>
+              </div>
+              <div><a href="index.html"><img src="/images-videos/Dash(mono).png" height="400" left="5px"></a></div>
+              <div class="m-5" >
+                  <p>Follow Us:</p>
+                  <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+      </footer>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
        <script src="landingpage.js"></script>
 </body>
