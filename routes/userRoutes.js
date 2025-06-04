@@ -29,14 +29,66 @@ router.post("/register", async (req, res) => {
 // Login
 router.post("/login", async (req, res) => {
   const { email, pswd } = req.body;
+
   try {
-    const user = await User.findOne({ email, pswd });
-    if (!user) return res.status(401).send("Invalid credentials");
-    res.json({ message: "Login successful", userId: user._id });
+    const user = await User.findOne({ email });
+
+    if (!user) return res.status(404).json({ message: "User not found" });
+    if (user.pswd !== pswd) return res.status(401).json({ message: "Invalid password" });
+
+    // If matched, send user info (without password)
+    const { _id, fname, lname } = user;
+    res.status(200).json({ userId: _id, fname, lname, email });
   } catch (err) {
-    res.status(500).send("Login failed");
+    console.error("Login error:", err);
+    res.status(500).json({ message: "Server error" });
   }
-  console.log(" Login attempt:", req.body);
+});
+//user check
+router.post("/check-email", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (user) {
+      res.json({ exists: true, user });
+    } else {
+      res.json({ exists: false });
+    }
+  } catch (error) {
+    console.error("Error checking email:", error);
+    res.status(500).json({ exists: false, error: "Server error" });
+  }
+});
+// Update user by ID
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ message: "User updated", user: updatedUser });
+  } catch (err) {
+    console.error("Error updating user:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+// Delete user
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await User.findByIdAndDelete(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json({ message: "User deleted" });
+  } catch (err) {
+    console.error("Delete error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 module.exports = router;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="user-profile.css" />
+</head>
+<body>
+  <header>
+    <h1>Update Your Profile</h1>
+  </header>
+
+  <main>
+    <div class="profile-form">
+      <input type="email" id="emailInput" placeholder="Enter your email to fetch info" />
+      <button id="fetchBtn">Fetch Info</button>
+
+      <div id="userData" style="display:none;">
+        <p>First Name: <span id="fetchedFname"></span></p>
+        <p>Last Name: <span id="fetchedLname"></span></p>
+        <p>Email: <span id="fetchedEmail"></span></p>
+
+        <h3>Update Fields</h3>
+        <input type="text" id="updateFname" placeholder="Update First Name" />
+        <input type="text" id="updateLname" placeholder="Update Last Name" />
+        <input type="email" id="updateEmail" placeholder="Update Email" />
+        <button id="updateBtn">Update Info</button>
+
+        <button id="deleteBtn" style="background-color: red; color: white; margin-top: 10px;">Delete Account</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyApp</p>
+  </footer>
+
+  <script src="user-profile.js"></script>
+</body>
+</html>

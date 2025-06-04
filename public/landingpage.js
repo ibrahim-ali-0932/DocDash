@@ -205,7 +205,18 @@ document.addEventListener("click", (e) => {
       alert(errors.join("\n"));
     } else {
       // ✅ Submit to backend
-      fetch("http://localhost:3000/api/users/register", {
+      fetch("http://localhost:3000/api/users/check-email", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email })
+})
+.then(res => res.json())
+.then(data => {
+  if (data.exists) {
+    alert("This email is already registered.");
+  } else {
+    // Proceed with registration
+    fetch("http://localhost:3000/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -224,9 +235,49 @@ document.addEventListener("click", (e) => {
           console.error(err);
           alert("An error occurred while registering. Try again.");
         });
+  }
+});
+      
     }
   }
 });
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "signIn-submit-btn") {
+    const email = document.querySelector('.form-box2 input[name="email"]').value.trim();
+    const pswd = document.querySelector('.form-box2 input[name="pswd"]').value.trim();
+
+    fetch("http://localhost:3000/api/users/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, pswd })
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Login failed");
+      return res.json();
+    })
+    .then(data => {
+      alert(`Welcome ${data.fname} ${data.lname}`);
+      localStorage.setItem("userId", data.userId);
+      localStorage.setItem("userEmail", data.email);
+      localStorage.setItem("userFname", data.fname);
+      localStorage.setItem("userLname", data.lname);
+
+      overlay.classList.remove("active");
+
+      // Display user info
+      const userInfo = document.getElementById("user-info");
+      if (userInfo) {
+        userInfo.innerHTML = `
+          <p><strong>Name:</strong> ${data.fname} ${data.lname}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+        `;
+        userInfo.style.display = "block";
+      }
+    })
+    .catch(err => alert("Invalid credentials or user not found."));
+  }
+});
+
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "forgot-pswd-btn") {
     let email = document.querySelector('.email-div input').value.trim();
